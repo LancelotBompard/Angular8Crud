@@ -6,7 +6,7 @@ cors = require('cors'),
 mongoose = require('mongoose'),
 config = require('./DB');
 
-const productRoute = require('./routes/product.route');
+const productRoute = require('./routes/Product/product.route');
 mongoose.Promise = global.Promise;
 mongoose.connect(config.DB, { useNewUrlParser: true }).then(
   () => {console.log('Database is connected') },
