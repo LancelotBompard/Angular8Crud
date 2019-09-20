@@ -1,3 +1,4 @@
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -26,6 +27,18 @@ export class ProductsService {
            .http
            .get(`${this.uri}`);
   }
+
+  updateProduct(ProductName, ProductDescription, ProductPrice, id) {
+    const obj = {
+      ProductName,
+      ProductDescription,
+      ProductPrice
+    };
+    this
+      .http
+      .post(`${this.uri}/update/${id}`, obj)
+      .subscribe(res => console.log('Done'));
+}
 
   editProduct(id) {
     return this
