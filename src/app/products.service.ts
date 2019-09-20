@@ -28,6 +28,12 @@ export class ProductsService {
            .get(`${this.uri}`);
   }
 
+  deleteProduct(id) {
+    return this
+              .http
+              .get(`${this.uri}/delete/${id}`);
+  }
+  
   updateProduct(ProductName, ProductDescription, ProductPrice, id) {
     const obj = {
       ProductName,
